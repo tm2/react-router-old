@@ -1,5 +1,7 @@
 var assert = require('assert');
 var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactDOMServer = require('react-dom/server');
 var Router = require('../index');
 var Route = require('../components/Route');
 var TestLocation = require('../locations/TestLocation');
@@ -20,7 +22,7 @@ describe('State', function () {
 
         Router.run(routes, location, function (Handler) {
           router = this;
-          React.render(<Handler/>, div, function () {
+          ReactDOM.render(<Handler/>, div, function () {
             assert(router.isActive('foo'));
             done();
           });
@@ -37,14 +39,14 @@ describe('State', function () {
         location = new TestLocation([ '/products/123/456?search=abc&limit=789' ]);
         Router.run(routes, location, function (Handler) {
           router = this;
-          React.render(<Handler/>, div, function () {
+          ReactDOM.render(<Handler/>, div, function () {
             done();
           });
         });
       });
 
       afterEach(function () {
-        React.unmountComponentAtNode(div);
+        ReactDOM.unmountComponentAtNode(div);
       });
 
       describe('and no query is used', function () {

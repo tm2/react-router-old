@@ -1,5 +1,7 @@
 var expect = require('expect');
 var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactDOMServer = require('react-dom/server');
 var Router = require('../../index');
 var TestLocation = require('../../locations/TestLocation');
 var { Nested, Bar } = require('../../TestUtils');
@@ -18,7 +20,7 @@ describe('Redirect', function () {
     ];
 
     Router.run(routes, location, function (Handler) {
-      React.render(<Handler />, div);
+      ReactDOM.render(<Handler />, div);
       expect(div.innerHTML).toMatch(/Bar/);
     });
   });
@@ -34,7 +36,7 @@ describe('Redirect', function () {
       ];
 
       Router.run(routes, location, function (Handler) {
-        React.render(<Handler />, div);
+        ReactDOM.render(<Handler />, div);
         expect(div.innerHTML).toMatch(/Bar/);
       });
     });
@@ -55,7 +57,7 @@ describe('Redirect', function () {
       );
 
       Router.run(routes, location, function (Handler) {
-        React.render(<Handler />, div);
+        ReactDOM.render(<Handler />, div);
         expect(div.innerHTML).toMatch(/Bar/);
       });
     });
@@ -74,7 +76,7 @@ describe('Redirect', function () {
       );
 
       Router.run(routes, location, function (Handler) {
-        React.render(<Handler />, div);
+        ReactDOM.render(<Handler />, div);
         expect(div.innerHTML).toMatch(/Bar/);
       });
     });

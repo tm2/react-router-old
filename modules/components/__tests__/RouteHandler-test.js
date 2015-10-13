@@ -1,5 +1,7 @@
 var expect = require('expect');
 var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactDOMServer = require('react-dom/server');
 var Router = require('../../index');
 var Route = require('../Route');
 var RouteHandler = require('../RouteHandler');
@@ -40,7 +42,7 @@ describe('RouteHandler', function () {
     var steps = [];
 
     steps.push(function (Handler, state) {
-      React.render(<Handler/>, div, function () {
+      ReactDOM.render(<Handler/>, div, function () {
         expect(div.innerHTML).toMatch(/Foo/);
         location.push('/bar');
       });
@@ -49,7 +51,7 @@ describe('RouteHandler', function () {
     steps.push(function (Handler, state) {
       updateComponentBeforeNextRender(function () {
         expect(div.innerHTML).toMatch(/Foo/);
-        React.render(<Handler/>, div, function () {
+        ReactDOM.render(<Handler/>, div, function () {
           expect(div.innerHTML).toMatch(/Bar/);
           done();
         });
@@ -91,7 +93,7 @@ describe('RouteHandler', function () {
     var div = document.createElement('div');
 
     Router.run(routes, '/foo', function (App) {
-      React.render(<App />, div);
+      ReactDOM.render(<App />, div);
     });
 
     function finishTest() {
