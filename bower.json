@@ -1,9 +1,9 @@
 {
-  "name": "react-router",
+  "name": "react-router-old",
   "version": "0.13.4",
   "description": "A complete routing library for React.js",
   "main": "build/umd/ReactRouter.js",
-  "homepage": "https://github.com/rackt/react-router",
+  "homepage": "https://github.com/nkt/react-router-old",
   "authors": [
     "Ryan Florence",
     "Michael Jackson"

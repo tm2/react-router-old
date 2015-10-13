@@ -80,7 +80,7 @@ class Page extends React.Component {
                 server side rendering.
               </p>
               <p>
-                <a href="https://github.com/rackt/react-router">Contribute on Github.</a>
+                <a href="https://github.com/nkt/react-router-old">Contribute on Github.</a>
               </p>
               {this.props.categories.map((category) => (
                 <section>

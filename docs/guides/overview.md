@@ -358,7 +358,7 @@ data and set state, you will also need to implement
 `componentWillReceiveProps` on your handler and its stateful children, just like any other
 component whose props are changing. This way you can leverage the
 performance of the React DOM diff algorithm. Look at the `Contact`
-handler [in the `master-detail` example](https://github.com/rackt/react-router/blob/master/examples/master-detail/app.js).
+handler [in the `master-detail` example](https://github.com/nkt/react-router-old/blob/master/examples/master-detail/app.js).
 
 If you would rather force route handlers to re-mount when transitioning between dynamic segments, you can assign a unique key to your route handler component to bypass this optimization:
 
